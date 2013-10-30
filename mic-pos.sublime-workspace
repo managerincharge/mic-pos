@@ -1,0 +1,211 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fun",
+				"fun	Function"
+			],
+			[
+				"token",
+				"tokenGenerator"
+			],
+			[
+				"Fi",
+				"FirebaseTokenGenerator"
+			],
+			[
+				"fb",
+				"fbRootRef"
+			],
+			[
+				"auth",
+				"authToken"
+			],
+			[
+				"fire",
+				"firebaseTokenGen"
+			],
+			[
+				"users",
+				"usersRef"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"text",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/DevProjects/mic-pos-web/routes/user.js",
+		"/D/DevProjects/mic-pos-web/views/index.jade",
+		"/D/DevProjects/mic-pos-web/settings/settings.production.js",
+		"/D/DevProjects/mic-pos-web/settings/settings.development.js",
+		"/D/DevProjects/mic-pos-web/settings/index.js",
+		"/D/DevProjects/mic-pos-web/settings/settings.global.js",
+		"/D/DevProjects/mic-pos-web/views/layout.jade",
+		"/D/DevProjects/mic-pos-web/routes/index.js",
+		"/D/DevProjects/mic-pos-web/.gitignore",
+		"/D/DevProjects/mic-pos-web/package.json",
+		"/D/DevProjects/mic-pos-server/app.js",
+		"/D/DevProjects/mic-pos-server/routes/index.js",
+		"/D/DevProjects/mic-pos-server/routes/users.js",
+		"/C/Users/Jim/Desktop/mic-test-export.json",
+		"/C/Users/Jim/Desktop/users.json",
+		"/D/DevProjects/mic-pos-server/routes/status.js",
+		"/D/DevProjects/mic-pos-server/views/status.jade",
+		"/D/DevProjects/mic-pos-server/views/index.jade",
+		"/D/DevProjects/mic-pos-server/.git/config",
+		"/C/Program Files (x86)/Git/etc/gitconfig",
+		"/D/DevProjects/mic-pos-server/node_modules/express/bin/express",
+		"/D/DevProjects/mic-pos-server/.gitignore",
+		"/D/DevProjects/mic-pos-server/package.json",
+		"/C/Users/Jim/Dropbox/DevProjects/mic-pos-server/posServer.js",
+		"/C/Users/Jim/.gitconfig",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Jim/Dropbox/DevProjects/server.js",
+		"/D/NodeDemos/server.js",
+		"/D/NodeDemos/public/css/site.css",
+		"/D/NodeDemos/views/index.jade",
+		"/D/NodeDemos/views/layout.jade",
+		"/D/NodeDemos/views/about.jade",
+		"/D/NodeDemos/views/contacts.jade",
+		"/D/NodeDemos/contacts.jade",
+		"/D/NodeDemos/about.jade",
+		"/D/NodeDemos/index.jade",
+		"/D/NodeDemos/indes.jade"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"javascripts"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/D/DevProjects/mic-pos-web/mic-pos-web.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 185.0,
+	"status_bar_visible": true
+}
