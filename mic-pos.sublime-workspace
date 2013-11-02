@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"file",
+				"fileData"
+			],
+			[
 				"fun",
 				"fun	Function"
 			],
@@ -43,6 +47,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1572,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -68,6 +80,20 @@
 	},
 	"file_history":
 	[
+		"/D/DevProjects/mic-pos/firebase/index.js",
+		"/D/DevProjects/mic-pos/app.js",
+		"/D/DevProjects/mic-pos/settings/settings.development.js",
+		"/D/DevProjects/mic-pos/settings/settings.production.js",
+		"/D/DevProjects/mic-pos/routes/enc-dec.js",
+		"/D/DevProjects/mic-pos/utils/md5/index.js",
+		"/D/DevProjects/mic-pos/utils/index.js",
+		"/D/DevProjects/mic-pos/utils/md5/md5.js",
+		"/D/DevProjects/mic-pos/utils/firebase-simple-login/index.js",
+		"/D/DevProjects/mic-pos/utils/firebase-simple-login/firebase-simple-login.js",
+		"/D/DevProjects/mic-pos/settings/index.js",
+		"/D/DevProjects/mic-pos/views/index.jade",
+		"/D/DevProjects/mic-pos/routes/index.js",
+		"/D/DevProjects/mic-pos/.gitignore",
 		"/D/DevProjects/mic-pos-web/routes/user.js",
 		"/D/DevProjects/mic-pos-web/views/index.jade",
 		"/D/DevProjects/mic-pos-web/settings/settings.production.js",
@@ -108,7 +134,7 @@
 	],
 	"find":
 	{
-		"height": 0.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -123,9 +149,18 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"');\n",
+			"utf8_encode",
+			"{\n",
+			"function",
+			"window",
+			"navigator",
+			"NODE_CLIENT",
+			"navigator",
+			"firebase",
 			"javascripts"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
@@ -141,8 +176,35 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"settings":
+					{
+						"buffer_size": 1572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								627,
+								627
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -206,6 +268,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 185.0,
+	"side_bar_width": 188.0,
 	"status_bar_visible": true
 }
