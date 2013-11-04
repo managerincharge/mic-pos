@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"da",
+				"dateJS"
+			],
+			[
+				"r",
+				"rootRef"
+			],
+			[
+				"log",
+				"logRef"
+			],
+			[
+				"org",
+				"orgAndStoreIds"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
 				"file",
 				"fileData"
 			],
@@ -51,7 +71,15 @@
 			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 1572,
+				"buffer_size": 1692,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "firebase/index.js",
+			"settings":
+			{
+				"buffer_size": 1888,
 				"line_ending": "Windows"
 			}
 		}
@@ -59,15 +87,19 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 311.0,
 		"selected_items":
 		[
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			]
 		],
-		"width": 0.0
+		"width": 416.0
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 146.0
 	},
 	"distraction_free":
 	{
@@ -80,13 +112,21 @@
 	},
 	"file_history":
 	[
+		"/D/DevProjects/mic-pos/app/helper.js",
+		"/D/DevProjects/mic-pos/app/logger-firebase.js",
 		"/D/DevProjects/mic-pos/firebase/index.js",
+		"/D/DevProjects/mic-pos/app/dateFormat.js",
+		"/D/DevProjects/boron.tmtheme/Boron.tmTheme",
 		"/D/DevProjects/mic-pos/app.js",
-		"/D/DevProjects/mic-pos/settings/settings.development.js",
-		"/D/DevProjects/mic-pos/settings/settings.production.js",
+		"/C/Program Files (x86)/Git/etc/gitconfig",
+		"/D/DevProjects/mic-pos/.git/COMMIT_EDITMSG",
+		"/D/DevProjects/mic-pos/.git/config",
 		"/D/DevProjects/mic-pos/routes/enc-dec.js",
-		"/D/DevProjects/mic-pos/utils/md5/index.js",
 		"/D/DevProjects/mic-pos/utils/index.js",
+		"/D/DevProjects/mic-pos/settings/settings.development.js",
+		"/D/DevProjects/mic-pos/firebase/firebase.js",
+		"/D/DevProjects/mic-pos/settings/settings.production.js",
+		"/D/DevProjects/mic-pos/utils/md5/index.js",
 		"/D/DevProjects/mic-pos/utils/md5/md5.js",
 		"/D/DevProjects/mic-pos/utils/firebase-simple-login/index.js",
 		"/D/DevProjects/mic-pos/utils/firebase-simple-login/firebase-simple-login.js",
@@ -113,7 +153,6 @@
 		"/D/DevProjects/mic-pos-server/views/status.jade",
 		"/D/DevProjects/mic-pos-server/views/index.jade",
 		"/D/DevProjects/mic-pos-server/.git/config",
-		"/C/Program Files (x86)/Git/etc/gitconfig",
 		"/D/DevProjects/mic-pos-server/node_modules/express/bin/express",
 		"/D/DevProjects/mic-pos-server/.gitignore",
 		"/D/DevProjects/mic-pos-server/package.json",
@@ -149,6 +188,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"log",
+			"utils",
 			"');\n",
 			"utf8_encode",
 			"{\n",
@@ -162,10 +203,11 @@
 		],
 		"highlight": false,
 		"in_selection": false,
-		"preserve_case": false,
+		"preserve_case": true,
 		"regex": false,
 		"replace_history":
 		[
+			"helper"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -176,7 +218,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -184,20 +226,47 @@
 					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 1572,
+						"buffer_size": 1692,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								627,
-								627
+								798,
+								798
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "firebase/index.js",
+					"settings":
+					{
+						"buffer_size": 1888,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1029,
+								1029
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -239,9 +308,13 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
 	"replace":
 	{
-		"height": 0.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":

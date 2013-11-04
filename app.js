@@ -11,8 +11,8 @@ var moment = require('moment');
 // var Agenda = require('agenda');
 // var ag = new Agenda({db: {address: 'mongodb://node:node@ds053188.mongolab.com:53188/node-test'}});
 // ag.define('test agenda', function (job, done) {
-// 	console.log('test agenda job executed');
-// 	done();
+// console.log('test agenda job executed');
+// done();
 // });
 // ag.every('1 minute', 'test agenda');
 // ag.start();
@@ -22,11 +22,11 @@ var moment = require('moment');
 var settings = require('./settings')(app);
 
 // load my modules
-var helper = require('./app/helper.js')(settings);
 var routes = require('./routes');
 var encDec = require('./routes/enc-dec.js')(settings);
-var firebase = require('./firebase')(settings, helper, util);
-var logger = require('./app/logger-firebase.js')(firebase, helper);
+var helper = require('./app/helper.js')(settings, moment);
+var firebase = require('./app/firebase.js')(settings, helper, util);
+var pos = require('./app/pos.js')(firebase, helper);
 
 // all environments
 app.set('port', process.env.PORT || 1981);
@@ -61,3 +61,5 @@ app.get('/dec/:s', encDec.dec);
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));
 });
+
+pos.init();

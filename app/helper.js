@@ -1,5 +1,7 @@
-module.exports = function (settings) {
+module.exports = function (settings, moment) {
     return {
+
+        moment: moment,
 
         vernam: {
             enc: function (message, key) {
@@ -25,7 +27,24 @@ module.exports = function (settings) {
         },
 
         orgId: settings.storeId.split('-')[0],
-        storeId: settings.storeId.split('-')[1]
+        storeId: settings.storeId.split('-')[1],
+
+        // date formats
+        DateToStringSeqWithTimeIncFracSecs: function (date) {
+            return moment(date).format('YYYY-MM-DD HH:mm:ss:SSS');
+        },
+        
+        DateToStringSeqWithTimeIncSecs: function (date) {
+            return moment(date).format('YYYY-MM-DD HH:mm:ss');
+        },
+
+        DateToStringSeqWithTimeNoSecs: function (date) {
+            return moment(date).format('YYYY-MM-DD HH:mm');
+        },
+
+        DateToStringSeqNoTime: function (date) {
+            return moment(date).format('YYYY-MM-DD');
+        },
 
     };
 };
