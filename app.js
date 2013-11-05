@@ -56,8 +56,8 @@ app.locals.app = app;
 app.locals.firebase = firebase;
 
 app.get('/', routes.index);
-app.get('/enc/:s', encDec.enc);
-app.get('/dec/:s', encDec.dec);
+app.get('/enc/:s/:k', encDec.enc);
+app.get('/dec/:s/:k', encDec.dec);
 
 http.createServer(app).listen(app.get('port'), function(){
 	console.log('Express server listening on port ' + app.get('port'));

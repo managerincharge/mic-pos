@@ -10,6 +10,14 @@ module.exports = function (settings, moment, util) {
 
         settings: settings,
 
+        encBase64: function (s) {
+            return new Buffer(s).toString('base64');
+        },
+
+        decBase64: function (s) {
+            return new Buffer(s, 'base64').toString();
+        },
+
         vernam: {
             enc: function (message, key) {
                 var ris = "", len = message.length, m = "", k = "", c;

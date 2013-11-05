@@ -8,13 +8,18 @@
 
  		enc: function(req, res){
  			var s = req.params.s;
- 			res.send(helper.vernam.enc(s, helper.settings.storeId) + '<br>' + helper.settings.storeId + '<br>' + s);
+ 			var k = req.params.k;
+ 			var result = helper.vernam.enc(s, k);
+ 			result = helper.encBase64(result);
+ 			res.send(result);
  		},
 
  		dec: function(req, res){
  			var s = req.params.s;
- 			res.send(helper.vernam.dec(s, helper.settings.storeId) + '<br>' + helper.settings.storeId + '<br>' + s);
- 		}
+ 			var k = req.params.k;
+ 			s = helper.decBase64(s);
+ 			var result = helper.vernam.dec(s, k);
+ 			res.send(result); 		}
 
  	};
  };

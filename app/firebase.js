@@ -5,7 +5,7 @@ module.exports = function (helper) {
 	var FirebaseTokenGenerator = require('firebase-token-generator');
 	var util = helper.util;
 
-	var tokenGenerator = new FirebaseTokenGenerator(helper.vernam.dec(helper.settings.firebaseKey, helper.settings.storeId));
+	var tokenGenerator = new FirebaseTokenGenerator(helper.vernam.dec(helper.decBase64(helper.settings.firebaseKey), helper.settings.storeId));
 	var token = tokenGenerator.createToken(
 		// my data
 		{
