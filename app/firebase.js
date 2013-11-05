@@ -1,10 +1,11 @@
-module.exports = function (settings, helper, util) {
+module.exports = function (helper) {
 
 	var fb = {};
 	var Firebase = require('firebase');
 	var FirebaseTokenGenerator = require('firebase-token-generator');
+	var util = helper.util;
 
-	var tokenGenerator = new FirebaseTokenGenerator(helper.vernam.dec(settings.firebaseKey, settings.storeId));
+	var tokenGenerator = new FirebaseTokenGenerator(helper.vernam.dec(helper.settings.firebaseKey, helper.settings.storeId));
 	var token = tokenGenerator.createToken(
 		// my data
 		{
@@ -13,11 +14,11 @@ module.exports = function (settings, helper, util) {
 		},
 		// token options
 		{
-			debug: settings.firebaseSecurityDebug,
+			debug: helper.settings.firebaseSecurityDebug,
 			expires: new Date(100000000*86400000)
 		});
 
-	fb.rootRef = new Firebase(settings.fbRootRef);
+	fb.rootRef = new Firebase(helper.settings.fbRootRef);
 	fb.thisPosRef = fb.rootRef.child(util.format('org/%s/store/%s', helper.orgId, helper.storeId));
 	var connectedRef = fb.rootRef.child('.info/connected');
 	var logRef = fb.thisPosRef.child('log');
@@ -30,7 +31,12 @@ module.exports = function (settings, helper, util) {
 
 	fb.logger = {
 		log: function (category, message) {
-			logRef.child(helper.DateToStringSeqWithTimeIncSecs(getEstServerTime())).set(util.format('%s: %s', category, message));
+			var entry = util.format('%s: %s', category, message);
+			if (fb.online) {
+				logRef.child(helper.DateToStringSeqWithTimeIncSecs(getEstServerTime())).set(entry);
+			} else {
+				helper.localLogger.log(helper.DateToStringSeqWithTimeIncSecs(getEstServerTime()) + ' - ' + entry);
+			}
 		},
 		// category can be any text, but the following constants are provided:
 		ERROR: 'ERROR',

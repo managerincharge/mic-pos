@@ -1,7 +1,14 @@
-module.exports = function (settings, moment) {
+module.exports = function (settings, moment, util) {
+
+    fs = require('fs');
+
     return {
 
         moment: moment,
+
+        util: util,
+
+        settings: settings,
 
         vernam: {
             enc: function (message, key) {
@@ -23,6 +30,12 @@ module.exports = function (settings, moment) {
                     ris += String.fromCharCode(c);
                 }
                 return ris;
+            }
+        },
+
+        localLogger: {
+            log: function (entry) {
+                fs.appendFile(settings.localLogger, entry, function (err) { });
             }
         },
 

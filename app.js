@@ -22,11 +22,12 @@ var moment = require('moment');
 var settings = require('./settings')(app);
 
 // load my modules
-var routes = require('./routes');
-var encDec = require('./routes/enc-dec.js')(settings);
-var helper = require('./app/helper.js')(settings, moment);
-var firebase = require('./app/firebase.js')(settings, helper, util);
+var helper = require('./app/helper.js')(settings, moment, util);
+var firebase = require('./app/firebase.js')(helper);
 var pos = require('./app/pos.js')(firebase, helper);
+
+var routes = require('./routes');
+var encDec = require('./routes/enc-dec.js')(helper);
 
 // all environments
 app.set('port', process.env.PORT || 1981);

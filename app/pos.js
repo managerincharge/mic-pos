@@ -4,10 +4,12 @@ module.exports = function (firebase, helper) {
 
 	var thisPosRef = firebase.thisPosRef;
 	var newTransRef = thisPosRef.child('newTrans');
+	var lastUploadInfoRef = thisPosRef.child('lastUploadInfo');
+	var lastUploadInfo;
 	var logger = firebase.logger;
 	var config;
 	var journalFile;
-	var fsWatch;
+	var ctime, start;
 
 	pos = {};
 
@@ -15,40 +17,83 @@ module.exports = function (firebase, helper) {
 		thisPosRef.child('config/public').once('value', function (snap) {
 			config = snap.val();
 			journalFile = config.journalFilePath;
-			//  start watching journal file
-			fsWatch = fs.watchFile(journalFile, function(curr, prev){
-
-				console.log(curr);
-				console.log(prev);
-
-				if ( parseInt(curr.size) > parseInt(prev.size) ) {
-					var rs = fs.createReadStream(journalFile, 
-					{
-						flags: 'r',
-						encoding: 'utf8',
-						autoClose: true,
-						start: prev.size,
+			lastUploadInfoRef.once('value', function (snap) {
+				lastUploadInfo = snap.val();
+				if (lastUploadInfo === null) { resetLastUploadInfo(); }
+				// handle case where journal has changed since startup
+				fs.stat(journalFile, function (err, stats) {
+					if (err) {
+						// file does not exist
+						resetLastUploadInfo ();
+					}
+					else {
+						ctime = helper.DateToStringSeqWithTimeIncSecs(stats.ctime);
+						start = -1;
+						if (ctime != lastUploadInfo.fileCreated) {
+							start = 0;
+						} else if (stats.size > lastUploadInfo.uploadedSoFar) {
+							start = lastUploadInfo.uploadedSoFar;
+						}
+						if (start > -1) {
+							lastUploadInfo.fileCreated = ctime;
+							lastUploadInfo.uploadedSoFar = parseInt(stats.size);
+							readAndUpload(start);
+						}
+					}
+					// start watching journal file
+					fs.watchFile(journalFile, { interval: 2007 }, function(curr, prev) {
+						if (curr.nlink === 0) {
+							// no file
+							resetLastUploadInfo ();
+						} else {
+							ctime = helper.DateToStringSeqWithTimeIncSecs(curr.ctime);
+							start = -1;
+							if (ctime != lastUploadInfo.fileCreated) {
+								start = 0;
+							} else if (curr.size > lastUploadInfo.uploadedSoFar) {
+								start = lastUploadInfo.uploadedSoFar;
+							}
+							if (start > -1) {
+								lastUploadInfo.fileCreated = ctime;
+								lastUploadInfo.uploadedSoFar = parseInt(curr.size);
+								readAndUpload(start);
+							}
+						}
 					});
-					var newText = '';
-					rs.on('error', function (err) { logger.log(logger.ERROR, 'Error processing journal ' + journalFile + '\n' + err); });
-					rs.on('end', function () {
-						newTransRef.child(helper.DateToStringSeqWithTimeIncSecs(firebase.getEstServerTime())).set({text: newText});
-					});
-					rs.on('data', function (d) { newText += d; });
-				} else {
-					logger.log(logger.INFO, 'Size of ' + journalFile + ' SHRANK from ' + prev.size + ' to ' + curr.size);
-				}
-				
+				});
 			});
 		});
 	};
 
+	//
+	// internal functions
+	//
+	function readAndUpload(startPos) {
+		var rs = fs.createReadStream(journalFile, 
+		{
+			flags: 'r',
+			encoding: 'utf8',
+			autoClose: true,
+			start: startPos,
+		});
+		var newText = '';
+		rs.on('error', function (err) { logger.log(logger.ERROR, 'Error processing journal ' + journalFile + '\n' + err); });
+		rs.on('end', function () {
+			if (newText.length) {
+				newTransRef.child(helper.DateToStringSeqWithTimeIncSecs(firebase.getEstServerTime())).set({text: newText});
+			}
+			lastUploadInfoRef.set(lastUploadInfo);
+		});
+		rs.on('data', function (d) { newText += d; });
+	}
 
-
-
-
-
-
+	function resetLastUploadInfo () {
+		lastUploadInfo = {
+			fileCreated: '',
+			uploadedSoFar: 0
+		};
+		lastUploadInfoRef.set(lastUploadInfo);
+	}
 
 	return pos;
 };
