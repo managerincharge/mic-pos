@@ -112,6 +112,11 @@
 	},
 	"file_history":
 	[
+		"/D/DevProjects/mic-pos/settings/settings.production.js",
+		"/D/DevProjects/mic-pos/settings/settings.development.js",
+		"/D/DevProjects/mic-pos/settings/keys.txt",
+		"/D/DevProjects/mic-pos/routes/enc-dec.js",
+		"/C/Users/Jim/Desktop/mic-pos-export.json",
 		"/D/DevProjects/mic-pos/start.bat",
 		"/D/DevProjects/mic-pos/package.json",
 		"/D/DevProjects/mic-pos/start.vbs",
@@ -119,10 +124,7 @@
 		"/D/DevProjects/mic-pos/app/pos.js",
 		"/D/DevProjects/mic-pos/app/helper.js",
 		"/D/DevProjects/mic-pos/app/firebase.js",
-		"/D/DevProjects/mic-pos/settings/settings.production.js",
-		"/D/DevProjects/mic-pos/settings/settings.development.js",
 		"/D/DevProjects/mic-pos/start.vbs start.bat",
-		"/D/DevProjects/mic-pos/routes/enc-dec.js",
 		"/C/Users/Jim/Desktop/mic-pos-0013-export.json",
 		"/C/Users/Jim/Desktop/mic-pos-private-export.json",
 		"/D/DevProjects/mic-pos/firebase/index.js",
