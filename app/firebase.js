@@ -45,7 +45,7 @@ module.exports = function (helper) {
 
 	fb.rootRef.auth(token, function (error, result) {
 		if(error) {
-			console.log(util.format('Authentication to %s failed'));
+			fb.logger.log(fb.logger.ERROR, util.format('Authentication to %s failed', fb.rootRef.toString()));
 		}
 	});
 
