@@ -9,7 +9,7 @@ module.exports = function (firebase, helper) {
 	var logger = firebase.logger;
 	var config;
 	var journalFile;
-	var ctime, start;
+	var ctime, mtime, start;
 
 	pos = {};
 
@@ -28,6 +28,7 @@ module.exports = function (firebase, helper) {
 					}
 					else {
 						ctime = helper.DateToStringSeqWithTimeIncSecs(stats.ctime);
+						mtime = helper.DateToStringSeqWithTimeIncSecs(stats.mtime);
 						start = -1;
 						if (ctime != lastUploadInfo.fileCreated) {
 							start = 0;
@@ -36,6 +37,7 @@ module.exports = function (firebase, helper) {
 						}
 						if (start > -1) {
 							lastUploadInfo.fileCreated = ctime;
+							lastUploadInfo.fileModified = mtime;
 							lastUploadInfo.uploadedSoFar = parseInt(stats.size);
 							readAndUpload(start);
 						}
@@ -47,6 +49,7 @@ module.exports = function (firebase, helper) {
 							resetLastUploadInfo ();
 						} else {
 							ctime = helper.DateToStringSeqWithTimeIncSecs(curr.ctime);
+							mtime = helper.DateToStringSeqWithTimeIncSecs(curr.mtime);
 							start = -1;
 							if (ctime != lastUploadInfo.fileCreated) {
 								start = 0;
@@ -55,6 +58,7 @@ module.exports = function (firebase, helper) {
 							}
 							if (start > -1) {
 								lastUploadInfo.fileCreated = ctime;
+								lastUploadInfo.fileModified = mtime;
 								lastUploadInfo.uploadedSoFar = parseInt(curr.size);
 								readAndUpload(start);
 							}
@@ -90,6 +94,7 @@ module.exports = function (firebase, helper) {
 	function resetLastUploadInfo () {
 		lastUploadInfo = {
 			fileCreated: '',
+			fileModified: '',
 			uploadedSoFar: 0
 		};
 		lastUploadInfoRef.set(lastUploadInfo);

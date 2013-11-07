@@ -83,14 +83,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "package.json",
-			"settings":
-			{
-				"buffer_size": 272,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -120,6 +112,8 @@
 	},
 	"file_history":
 	[
+		"/D/DevProjects/mic-pos/package.json",
+		"/C/Users/Jim/Desktop/text.json",
 		"/D/DevProjects/mic-pos/settings/keys.txt",
 		"/D/DevProjects/mic-pos/settings/settings.development.js",
 		"/D/DevProjects/mic-pos/routes/enc-dec.js",
@@ -129,7 +123,6 @@
 		"/D/DevProjects/mic-pos/settings/settings.production.js",
 		"/C/Users/Jim/Desktop/fcf-9999",
 		"/D/DevProjects/mic-pos/.gitignore",
-		"/D/DevProjects/mic-pos/package.json",
 		"/C/Users/Jim/Desktop/mic-pos-export.json",
 		"/D/DevProjects/mic-pos/start.bat",
 		"/D/DevProjects/mic-pos/start.vbs",
@@ -237,37 +230,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "package.json",
-					"settings":
-					{
-						"buffer_size": 272,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								42,
-								42
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
