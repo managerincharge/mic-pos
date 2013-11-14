@@ -25,7 +25,7 @@ var settings = require('./settings')(app);
 var helper = require('./app/helper.js')(settings, moment, util);
 var firebase = require('./app/firebase.js')(helper);
 var pos = require('./app/pos.js')(firebase, helper);
-var commanding = require('./app/commanding.js')(firebase, helper);
+var commanding = require('./app/commanding.js')(firebase, helper, pos;
 
 var routes = require('./routes');
 var encDec = require('./routes/enc-dec.js')(helper);

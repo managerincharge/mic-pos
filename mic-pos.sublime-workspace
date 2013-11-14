@@ -92,10 +92,18 @@
 	"buffers":
 	[
 		{
-			"file": "app/firebase.js",
+			"file": "app.js",
 			"settings":
 			{
-				"buffer_size": 2201,
+				"buffer_size": 1830,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/commanding.js",
+			"settings":
+			{
+				"buffer_size": 619,
 				"line_ending": "Windows"
 			}
 		}
@@ -128,15 +136,15 @@
 	},
 	"file_history":
 	[
-		"/D/DevProjects/mic-pos/app/firebase.js",
 		"/D/DevProjects/mic-pos/app/commanding.js",
+		"/D/DevProjects/mic-pos/app/firebase.js",
+		"/D/DevProjects/mic-pos/settings/settings.development.js",
 		"/D/DevProjects/mic-pos/app.js",
 		"/D/DevProjects/mic-pos/app/commanding",
 		"/D/DevProjects/mic-pos/package.json",
 		"/D/DevProjects/mic-pos/app/pos.js",
 		"/C/Users/Jim/Desktop/text.json",
 		"/D/DevProjects/mic-pos/settings/keys.txt",
-		"/D/DevProjects/mic-pos/settings/settings.development.js",
 		"/D/DevProjects/mic-pos/routes/enc-dec.js",
 		"/D/DevProjects/mic-pos/app/helper.js",
 		"/D/DevProjects/mic-pos/settings/settings.production.js",
@@ -248,23 +256,49 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/firebase.js",
+					"file": "app.js",
 					"settings":
 					{
-						"buffer_size": 2201,
+						"buffer_size": 1830,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1454,
-								1454
+								828,
+								828
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/commanding.js",
+					"settings":
+					{
+						"buffer_size": 619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
 							]
 						],
 						"settings":
@@ -273,7 +307,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 324.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

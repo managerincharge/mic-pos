@@ -1,4 +1,4 @@
-module.exports = function (firebase, helper) {
+module.exports = function (firebase, helper, pos) {
 
 	cmdListRef = firebase.thisPosRef.child('commands/list');
 	cmdResultsRef = firebase.thisPosRef.child('commands/results');
